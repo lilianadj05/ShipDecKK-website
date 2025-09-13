@@ -1,0 +1,1203 @@
+/* UMUM */
+:root {
+    --primary-color: #002147;
+    --secondary-color: #003366;
+    --accent-color: #0056b3;
+    --light-color: #f5f8fa;
+    --dark-color: #00275A;
+    --text-color: #333;
+    --light-text: #fff;
+    --border-radius: 4px;
+    --box-shadow: 0 4px 12px rgba(0, 33, 71, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #fff;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+    background-color: #fff;
+    color: var(--primary-color);
+    border: none;
+}
+
+.btn:hover {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    transform: translateY(-3px); 
+    box-shadow: 0 6px 15px rgba(0, 33, 71, 0.15);
+}
+
+.btn-dark {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+}
+
+.btn-dark:hover {
+    background-color: var(--secondary-color);
+}
+
+/* NAVBAR */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+.logo {
+    width: 120px;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    color: var(--primary-color);
+    font-weight: 500;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: var(--transition);
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+    width: 100%;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    display: none;
+    cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+    background-color: var(--dark-color);
+    color: var(--light-text);
+    padding: 10px 0 10px;
+    height: auto;
+    min-height: auto;
+}
+
+.footer-logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.footer-logo img {
+    width: 200px;
+    margin: 0 auto;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    flex-wrap: wrap; 
+    gap: 30px;
+}
+
+.footer-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--accent-color);
+}
+
+.footer-section p {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%; 
+    color: var(--light-text);
+}
+
+.social-icons a:hover {
+    background-color: var(--accent-color);
+}
+
+.footer-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-nav ul li a {
+    color: #ccc;
+}
+
+.footer-nav ul li a:hover {
+    color: var(--light-text);
+}
+
+.footer-subscribe form {
+    display: flex;
+}
+
+.footer-subscribe input {
+    padding: 10px 15px;
+    border: none;
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+    width: 200px;
+}
+
+.footer-subscribe button {
+    background-color: var(--accent-color);
+    color: var(--light-text);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.footer-subscribe button:hover {
+    background-color: var(--primary-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #999;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    height: auto;
+}
+
+@media screen and (max-width: 768px) {
+    /* NAVBAR */
+    .nav-toggle-label {
+        display: block;
+        position: relative;
+        z-index: 2;
+    }
+    
+    .nav-toggle-label span,
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+        display: block;
+        background: var(--primary-color);
+        height: 2px;
+        width: 25px;
+        position: relative;
+    }
+    
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+        content: '';
+        position: absolute;
+    }
+    
+    .nav-toggle-label span::before {
+        bottom: 8px;
+    }
+    
+    .nav-toggle-label span::after {
+        top: 8px;
+    }
+    
+    nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #fff;
+        width: 100%;
+        transform: scale(1, 0);
+        transform-origin: top;
+        transition: transform 0.3s ease;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        padding: 80px 0 30px;
+    }
+    
+    nav ul li {
+        margin: 0;
+        text-align: center;
+        padding: 15px;
+    }
+    
+    .nav-toggle:checked ~ nav {
+        transform: scale(1, 1);
+    }
+
+    /* FOOTER */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-section h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .footer-section p {
+        justify-content: center;
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
+    
+    .footer-nav ul {
+        align-items: center;
+    }
+    
+    .footer-subscribe form {
+        justify-content: center;
+    }
+}
+
+
+/* HOME PAGE */
+/* HERO */
+.hero {
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 33, 71, 0.6), rgba(0, 33, 71, 0.6)), url('assets/Home Page/home page 1.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--light-text);
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 0 20px;
+    margin-left: 10%;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    max-width: 500px;
+}
+
+/* LUXURY YACHT */
+.luxury-yacht {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.luxury-yacht .container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.yacht-container {
+    flex: 1;
+    position: relative;
+    box-shadow: var(--box-shadow);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.yacht-image {
+    width: 100%;
+}
+
+.yacht-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 20px;
+}
+
+.yacht-info h2 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.yacht-info p {
+    color: #666;
+}
+
+.fleet-info {
+    flex: 1;
+}
+
+.fleet-info h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.fleet-info p {
+    margin-bottom: 25px;
+    color: #555;
+}
+
+/* WHY CHOOSE */
+.why-choose {
+    padding: 80px 0;
+    background-color: var(--light-color);
+    text-align: center;
+}
+
+.why-choose h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 50px;
+}
+
+.benefits-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.benefit-card {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    padding: 40px 30px;
+    border-radius: 8px;
+    flex: 1;
+    transition: var(--transition);
+}
+
+.benefit-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 33, 71, 0.2);
+}
+
+.benefit-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+/* STANDARD */
+.standard {
+    padding: 100px 0;
+    background-image: linear-gradient(rgba(0, 33, 71, 0.6), rgba(0, 33, 71, 0.6)), url('assets/Home Page/excellence.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--light-text);
+    text-align: center;
+}
+
+.standard h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.standard p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.hero-content, .yacht-container, .fleet-info, .benefit-card {
+    animation: fadeIn 1s ease-in-out; 
+}
+
+@media screen and (max-width: 768px) {
+    /* HERO */
+    .hero {
+        height: 80vh;
+    }
+    
+    .hero-content {
+        margin-left: 0;
+        text-align: center;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+    }
+    
+    /* LUXURY YACHT */
+    .luxury-yacht .container {
+        flex-direction: column;
+    }
+    
+    .yacht-container, .fleet-info {
+        width: 100%;
+    }
+    
+    /* WHY CHOOSE */
+    .benefits-container {
+        flex-direction: column;
+    }
+}
+
+
+/* GALLERY PAGE */
+/* HERO */
+.gallery-hero {
+    height: 100vh;
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    padding: 145px 0 60px;
+    background-image: linear-gradient(rgba(0, 33, 71, 0.6), rgba(0, 33, 71, 0.6)), url('assets/Gallery Page/luxury liners/Royal Voyager 900/Royal Voyager 900_1.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* SHIP CATEGORY */
+.ship-category {
+    padding: 0 0 30px;
+}
+
+.category-header {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    padding: 20px 0;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.category-header h2 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.category-header p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* SHIP ITEM */
+.ship-item {
+    margin-bottom: 30px;
+    background-color: var(--light-color);
+}
+
+.ship-item .container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.ship-image {
+    flex: 1;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+}
+
+.ship-details {
+    flex: 1;
+    padding: 30px 0;
+}
+
+.ship-details h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+
+.ship-details p {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* ALTERNATE LAYOUT */
+.ship-item.alt-layout .container {
+    flex-direction: row-reverse;
+}
+
+/* CTA */
+.cta-section {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    text-align: center;
+    padding: 60px 0;
+    background-image: linear-gradient(rgba(0, 33, 71, 0.6), rgba(0, 33, 71, 0.6)), url('assets/Gallery Page/work with us.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.cta-section h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.cta-section p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.ship-item {
+    animation: fadeIn 0.8s ease-out;
+}
+
+.ship-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.ship-item:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@media screen and (max-width: 768px) {
+    /* HERO */
+    .gallery-hero {
+        padding: 100px 0 40px;
+    }
+    
+    /* SHIP ITEMS */
+    .ship-item .container,
+    .ship-item.alt-layout .container {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .ship-image, .ship-details {
+        width: 100%;
+    }
+    
+    .ship-details {
+        padding: 20px;
+    }
+}
+
+
+/* SERVICES PAGE */
+/* HERO */
+.hero-services {
+    height: 100vh;
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    padding: 145px 0 60px;
+    background-image: linear-gradient(rgba(0, 33, 71, 0.6), rgba(0, 33, 71, 0.6)), url('assets/Services Page/services.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* SERVICES */
+.services {
+    padding: 80px 0;
+}
+
+.service-item {
+    display: flex;
+    margin-bottom: 60px;
+    align-items: center;
+    gap: 40px;
+}
+
+.service-item.alt-layout {
+    background-color: var(--light-color);
+    padding-left: 40px;
+}
+
+.service-image {
+    flex: 1;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+}
+
+.service-content {
+    flex: 1;
+}
+
+.service-content h2 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.service-content p {
+    margin-bottom: 15px;
+}
+
+.service-content ul {
+    margin-bottom: 25px;
+}
+
+.service-content li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.service-content li::before {
+    content: '•';
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+}
+
+/* CTA like Gallery Page */
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.service-item {
+    animation: fadeIn 0.8s ease-out;
+}
+
+.service-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.service-item:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@media screen and (max-width: 768px) {    
+    /* HERO */
+    .hero-services {
+       padding: 100px 0 40px;
+    }
+    
+    /* SERVCIES */
+    .services {
+        padding: 60px 0;
+    }
+    
+    .service-item,
+    .service-item.alt-layout {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .service-image,
+    .service-content {
+        width: 100%;
+    }
+}
+
+
+/* ABOUT US PAGE */
+/* HERO */
+.hero-aboutus {
+    background-color: var(--primary-color);
+    background-image: linear-gradient(rgba(0, 33, 71, 0.6), rgba(0, 33, 71, 0.6)), url('assets/Gallery Page/luxury yacths/Ocean Serenity X/Ocean Serenity X_1.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--light-text);
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    padding: 145px 0 60px;
+}
+
+/* MISSION */
+.mission {
+    padding: 80px 0;
+    background-color: var(--light-color);
+}
+
+.section-title {
+    text-align: center;
+    padding-bottom: 30px;
+    color: var(--dark-color);
+}
+
+.mission-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.mission-content blockquote {
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.mission-content p {
+    font-size: 1rem;
+}
+
+/* CORE VALUES */
+.core-values {
+    padding: 0;
+    background-color: var(--primary-color);
+    color: var(--light-text);
+}
+
+.values-container {
+    display: flex;
+    min-height: 500px;
+}
+
+.values-image {
+    flex: 1;
+    background-image: linear-gradient(rgba(0, 33, 71, 0.5), rgba(0, 33, 71, 0.5)), url('assets/About Us Page/core values.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.values-image h2 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    text-align: left;
+}
+
+.values-content {
+    flex: 2;
+    padding: 60px 20px 60px 60px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.value-item {
+    flex: 1 0 50%;
+    padding: 20px;
+    min-width: 250px;
+}
+
+.value-item h3 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    position: relative;
+}
+
+.value-item h3::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--accent-color);
+}
+
+/* ACHIEVEMENTS */
+.achievements {
+    padding: 80px 0;
+    background-color: var(--light-color);
+}
+
+.achievement-cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.achievement-card {
+    flex: 1;
+    min-width: 300px;
+    background-color: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.achievement-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 33, 71, 0.15);
+}
+
+.achievement-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.achievement-card h3 {
+    color: var(--dark-color);
+    padding: 20px 20px 10px;
+    font-size: 1.1rem;
+}
+
+.achievement-card p {
+    padding: 0 20px 20px;
+    font-size: 0.9rem;
+}
+
+/* TESTIMONIAL */
+.testimonials {
+    padding: 80px 0;
+    background-color: var(--primary-color);
+    color: var(--light-text);
+}
+
+.testimonial-title {
+    text-align: center;
+    padding-bottom: 30px;
+    color: var(--light-text);
+}
+
+.testimonial-intro {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+.testimonial-card {
+    background-color: var(--light-color);
+    color: var(--text-color);
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: var(--border-radius);
+    position: relative;
+}
+
+.testimonial-text {
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.testimonial-author {
+    text-align: center;
+}
+
+.author-name {
+    font-weight: bold;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.author-title {
+    font-size: 0.9rem;
+    color: #666;
+    text-align: center;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.mission-content,
+.achievement-card,
+.testimonial-card {
+    animation: fadeIn 0.8s ease-out;
+}
+
+.achievement-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.achievement-card:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.value-item:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.value-item:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.value-item:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+@media screen and (max-width: 768px) {    
+    /* CORE VALUES */
+    .values-container {
+        flex-direction: column;
+    }
+    
+    .values-image {
+        min-height: 200px;
+    }
+    
+    .values-content {
+        padding: 40px 20px;
+    }
+    
+    .value-item {
+        flex: 1 0 100%;
+        padding: 15px;
+    }
+    
+    /* ACHIEVEMENTS */
+    .achievement-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .achievement-card {
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    /* Testimonials */
+    .testimonial-card {
+        padding: 30px 20px;
+    }
+}
+
+
+/* SUBSCRIPTION PAGE */
+/* HERO */
+.subscription-hero {
+    background-image: url('assets/Subscription Page/subscription.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 150px;
+    padding-bottom: 30px;
+    position: relative;
+}
+
+.subscription-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.subscription-form {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 40px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 450px;
+    position: relative;
+    z-index: 1;
+    box-shadow: var(--box-shadow);
+}
+
+.subscription-form h2 {
+    color: var(--primary-color);
+    font-size: 25px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 10px;
+    transition: var(--transition);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(0, 86, 179, 0.2);
+}
+
+.form-group.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-group.checkbox label {
+    margin-bottom: 0;
+}
+
+.join-btn {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: block;
+    margin: 0 auto;
+}
+
+.join-btn:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.error-message {
+    color: #d9534f;
+    font-size: 14px;
+    margin-top: 5px;
+    display: block;
+}
+
+@media screen and (max-width: 768px) { 
+    .hero {
+        justify-content: center;
+        padding-top: 100px;
+    }
+    
+    .subscription-form {
+        max-width: 90%;
+        padding: 30px 20px;
+    }
+}
